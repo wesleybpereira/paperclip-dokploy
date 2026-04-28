@@ -22,7 +22,6 @@ services:
       BETTER_AUTH_SECRET: "${BETTER_AUTH_SECRET:?BETTER_AUTH_SECRET must be set}"
       PAPERCLIP_ALLOWED_HOSTNAMES: "${PAPERCLIP_ALLOWED_HOSTNAMES:-localhost}"
     volumes:
-<<<<<<< HEAD:docker-compose.quickstart.yml
       - paperclip_data:/paperclip
     depends_on:
       paperclip-init:
@@ -31,6 +30,3 @@ services:
 
 volumes:
   paperclip_data:
-=======
-      - "${PAPERCLIP_DATA_DIR:-../data/docker-paperclip}:/paperclip"
->>>>>>> master:docker/docker-compose.quickstart.yml
