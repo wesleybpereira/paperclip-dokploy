@@ -12,7 +12,7 @@ services:
     ports:
       - "${PAPERCLIP_PORT:-3100}:3100"
     environment:
-      HOST: "0.0.0.0"
+      HOST: "${HOST:-0.0.0.0}"
       PAPERCLIP_HOME: "/paperclip"
       OPENAI_API_KEY: "${OPENAI_API_KEY:-}"
       ANTHROPIC_API_KEY: "${ANTHROPIC_API_KEY:-}"
