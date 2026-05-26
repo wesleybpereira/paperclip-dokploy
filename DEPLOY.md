@@ -25,8 +25,8 @@
 
 **New Project → Add Service → Compose**
 
-- **Source:** Git → `https://github.com/wesleybpereira/paperclip`
-- **Branch:** `master`
+- **Source:** Git → `https://github.com/wesleybpereira/paperclip-dokploy`
+- **Branch:** `dokploy-config`
 - **Compose file:** `docker-compose.quickstart.yml`
 
 ---
@@ -105,7 +105,7 @@ git merge upstream/master
 # Resolva conflitos no Dockerfile e docker-compose.quickstart.yml se necessário
 # mantendo as linhas do fix do plugin-sdk e do volume nomeado
 
-git push origin master
+git push origin dokploy-config
 ```
 
 Depois clique em **Redeploy** no Dokploy.
