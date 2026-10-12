@@ -172,6 +172,12 @@ RUN echo "cli-tools-epoch: ${CLI_TOOLS_CACHE_EPOCH}" \
 COPY scripts/docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
+# `docker exec` / Dokploy terminal sessions are root; this wrapper (first on
+# PATH) re-runs Claude Code as node so subscription logins stay readable by
+# the server. See scripts/claude-as-node.sh.
+COPY scripts/claude-as-node.sh /usr/local/sbin/claude
+RUN chmod 0755 /usr/local/sbin/claude
+
 COPY --chown=node:node --from=build /app /app
 
 # Declare per-build metadata after the stable RUN layers. Docker includes
