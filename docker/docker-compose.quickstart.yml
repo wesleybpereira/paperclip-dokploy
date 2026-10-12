@@ -14,9 +14,10 @@ services:
       - paperclip_data:/paperclip
 
   paperclip:
-    build:
-      context: ..
-      dockerfile: Dockerfile
+    # Prebuilt by .github/workflows/dokploy-image.yml on every push to this
+    # branch. pull_policy: always re-pulls the moving tag on each deploy.
+    image: ghcr.io/wesleybpereira/paperclip-dokploy:dokploy-latest
+    pull_policy: always
     # Ceiling on processes. The image makes tini PID 1 so orphaned agent
     # descendants are reaped instead of piling up as zombies; this is the
     # backstop if something leaks anyway — the container hits its own limit and
